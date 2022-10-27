@@ -1,10 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 
 namespace Vermaat.Crm.Specflow.Sample.UnitTests
 {
@@ -25,7 +19,7 @@ namespace Vermaat.Crm.Specflow.Sample.UnitTests
         {
             var action = (CommandAction)Enum.Parse(typeof(CommandAction), commandAction, true);
 
-            Assert.AreEqual(action, _crmContext.CommandProcessor.DefaultCommandAction);
+            Assert.Equal(action, _crmContext.CommandProcessor.DefaultCommandAction);
         }
 
         [When(@"([^\s]+) has a contact named ([^\s]+) created via quick create with the following values")]
