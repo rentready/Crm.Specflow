@@ -8,8 +8,9 @@ using Microsoft.Xrm.Sdk.Query;
 using Vermaat.Crm.Specflow.Entities;
 using OpenQA.Selenium;
 using System.Net;
-using Microsoft.Xrm.Tooling.Connector;
 using Microsoft.Crm.Sdk.Messages;
+using Microsoft.PowerPlatform.Dataverse.Client;
+
 
 namespace Vermaat.Crm.Specflow.Connectivity
 {
@@ -18,14 +19,14 @@ namespace Vermaat.Crm.Specflow.Connectivity
     /// </summary>
     public class CrmService : IOrganizationService
     {
-        private readonly Lazy<CrmServiceClient> _service;
+        private readonly Lazy<ServiceClient> _service;
         private readonly string _connectionString;
         private Lazy<UserSettings> _userSettings;
         private Lazy<Guid> _userId;
         private Guid _callerId;
 
 
-        private CrmServiceClient Service => _service.Value;
+        private ServiceClient Service => _service.Value;
         public UserSettings UserSettings => _userSettings.Value;
         public Guid UserId => _userId.Value;
 
@@ -45,7 +46,7 @@ namespace Vermaat.Crm.Specflow.Connectivity
         public CrmService(string connectionString)
         {
             _connectionString = connectionString;
-            _service = new Lazy<CrmServiceClient>(ConnectToCrm);
+            _service = new Lazy<ServiceClient>(ConnectToCrm);
             _userSettings = new Lazy<UserSettings>(GetUserSettings);
             _userId = new Lazy<Guid>(GetUserId);
         }
@@ -156,14 +157,14 @@ namespace Vermaat.Crm.Specflow.Connectivity
 
         #endregion
 
-        private CrmServiceClient ConnectToCrm()
+        private ServiceClient ConnectToCrm()
         {
             Logger.WriteLine("Connecting to Dynamics CRM API");
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            var client = new CrmServiceClient(_connectionString);
+            var client = new ServiceClient(_connectionString);
 
             if (!client.IsReady)
-                throw new TestExecutionException(Constants.ErrorCodes.UNABLE_TO_LOGIN, client.LastCrmException, client.LastCrmError);
+                throw new TestExecutionException(Constants.ErrorCodes.UNABLE_TO_LOGIN, client.LastException, client.LastError);
 
             return client;
             

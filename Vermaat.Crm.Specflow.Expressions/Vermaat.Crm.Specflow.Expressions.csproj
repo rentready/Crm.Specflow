@@ -1,11 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <AssemblyName>Vermaat.Crm.Specflow.Expressions</AssemblyName>
     <AssemblyTitle>Vermaat.Crm.Specflow.Expressions</AssemblyTitle>
     <Configurations>Debug;Release;NuGetRelease</Configurations>
     <PackageId>Vermaat.Crm.Specflow.Expressions</PackageId>
-    <TargetFramework>net4.6.2</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NuGetRelease|AnyCPU'">
