@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyName>Vermaat.Crm.Specflow</AssemblyName>
+    <AssemblyName>RentReady.Vermaat.Crm.Specflow</AssemblyName>
     <AssemblyTitle>Vermaat.Crm.Specflow</AssemblyTitle>
     <Configurations>Debug;Release;NuGetRelease</Configurations>
     <PackageId>RentReady.Vermaat.Crm.Specflow</PackageId>
