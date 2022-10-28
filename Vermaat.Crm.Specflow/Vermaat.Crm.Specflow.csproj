@@ -4,7 +4,7 @@
     <AssemblyName>Vermaat.Crm.Specflow</AssemblyName>
     <AssemblyTitle>Vermaat.Crm.Specflow</AssemblyTitle>
     <Configurations>Debug;Release;NuGetRelease</Configurations>
-    <PackageId>Vermaat.Crm.Specflow</PackageId>
+    <PackageId>RentReady.Vermaat.Crm.Specflow</PackageId>
 	<TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
