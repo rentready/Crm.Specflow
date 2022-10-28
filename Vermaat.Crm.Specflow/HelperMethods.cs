@@ -3,7 +3,6 @@ using Microsoft.Dynamics365.UIAutomation.Browser;
 using Microsoft.Xrm.Sdk;
 using OpenQA.Selenium;
 using System;
-using System.Configuration;
 using System.Linq;
 using System.Threading;
 using Vermaat.Crm.Specflow.EasyRepro;
@@ -15,7 +14,7 @@ namespace Vermaat.Crm.Specflow
     {
         public static string GetAppSettingsValue(string key, bool emptyAllowed = false, string defaultValue = null)
         {
-            string value = ConfigurationManager.AppSettings[key];
+            ConfigurationManager.AppSettings.TryGetValue(key, out string value);
 
             if (!emptyAllowed && string.IsNullOrEmpty(value))
                 throw new TestExecutionException(Constants.ErrorCodes.APP_SETTINGS_REQUIRED, key);

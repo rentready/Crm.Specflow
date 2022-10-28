@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyName>RentReady.Vermaat.Crm.Specflow</AssemblyName>
+    <AssemblyName>Vermaat.Crm.Specflow</AssemblyName>
     <AssemblyTitle>Vermaat.Crm.Specflow</AssemblyTitle>
     <Configurations>Debug;Release;NuGetRelease</Configurations>
     <PackageId>RentReady.Vermaat.Crm.Specflow</PackageId>
@@ -22,6 +22,8 @@
   <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.7.0" />
     <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.4.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.2" />
     <PackageReference Include="Microsoft.PowerPlatform.Dataverse.Client" Version="1.0.23" />
     <PackageReference Include="Microsoft.PowerPlatform.Dataverse.Client.Dynamics" Version="1.0.23" />

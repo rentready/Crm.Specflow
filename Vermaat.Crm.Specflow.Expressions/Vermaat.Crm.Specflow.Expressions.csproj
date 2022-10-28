@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyName>RentReady.Vermaat.Crm.Specflow.Expressions</AssemblyName>
+    <AssemblyName>Vermaat.Crm.Specflow.Expressions</AssemblyName>
     <AssemblyTitle>Vermaat.Crm.Specflow.Expressions</AssemblyTitle>
     <Configurations>Debug;Release;NuGetRelease</Configurations>
     <PackageId>RentReady.Vermaat.Crm.Specflow.Expressions</PackageId>
