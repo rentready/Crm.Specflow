@@ -56,7 +56,7 @@ namespace Vermaat.Crm.Specflow.Commands
             public int StatusReasonNumber { get; set; }
             public bool Win { get; set; }
 
-            public static OpportunityCloseHelper Create(CrmTestingContext crmContext, Table table, EntityReference opportunity)
+            public static OpportunityCloseHelper Create(ICrmTestingContext crmContext, Table table, EntityReference opportunity)
             {
                 var result = new OpportunityCloseHelper
                 {

@@ -23,7 +23,7 @@ namespace Vermaat.Crm.Specflow
             return GlobalTestingContext.ConnectionManager.AdminConnection.RetrieveMultiple(qe).Entities.Count > 0;
         }
 
-        public static QueryExpression CreateQueryExpressionFromTable(string entityName, Table criteria, CrmTestingContext context)
+        public static QueryExpression CreateQueryExpressionFromTable(string entityName, Table criteria, ICrmTestingContext context)
         {
             Logger.WriteLine($"Creating Query for {entityName}");
             QueryExpression qe = new QueryExpression(entityName)

@@ -36,7 +36,7 @@ namespace Vermaat.Crm.Specflow.EasyRepro
             return new OpportunityCloseDialog(app, metadata, closeAsWon);
         }
 
-        public void EnterData(CrmTestingContext crmContext, Table closeData)
+        public void EnterData(ICrmTestingContext crmContext, Table closeData)
         {
             foreach(var row in closeData.Rows)
             {

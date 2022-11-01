@@ -25,7 +25,7 @@ namespace Vermaat.Crm.Specflow.EasyRepro.Fields
             App = app;
         }
 
-        public virtual void SetValue(CrmTestingContext crmContext, string fieldValueText)
+        public virtual void SetValue(ICrmTestingContext crmContext, string fieldValueText)
         {
             object fieldValue = ObjectConverter.ToCrmObject(Metadata.EntityLogicalName, Metadata.LogicalName, fieldValueText, crmContext);
 

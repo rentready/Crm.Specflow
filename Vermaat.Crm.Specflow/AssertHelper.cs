@@ -76,7 +76,7 @@ namespace Vermaat.Crm.Specflow
         /// <param name="record"></param>
         /// <param name="criteria"></param>
         /// <param name="context"></param>
-        public static void HasProperties(Entity record, Table criteria, CrmTestingContext context)
+        public static void HasProperties(Entity record, Table criteria, ICrmTestingContext context)
         {
             List<string> errors = new List<string>();
             foreach (var row in criteria.Rows)

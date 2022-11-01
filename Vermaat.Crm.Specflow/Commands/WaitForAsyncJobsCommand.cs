@@ -15,7 +15,7 @@ namespace Vermaat.Crm.Specflow.Commands
     {
         private readonly string _alias;
 
-        public WaitForAsyncJobsCommand(CrmTestingContext crmContext, string alias) : base(crmContext)
+        public WaitForAsyncJobsCommand(ICrmTestingContext crmContext, string alias) : base(crmContext)
         {
             _alias = alias;
         }

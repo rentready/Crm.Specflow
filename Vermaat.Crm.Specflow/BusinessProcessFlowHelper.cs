@@ -19,7 +19,7 @@ namespace Vermaat.Crm.Specflow
           return GlobalTestingContext.ConnectionManager.CurrentConnection.Retrieve($"{process.GetAttributeValue<string>("uniquename")}", instance.Id, new ColumnSet("activestageid"));
         }
 
-        public static Entity[] GetActivePath(CrmTestingContext crmContext, Entity instance)
+        public static Entity[] GetActivePath(ICrmTestingContext crmContext, Entity instance)
         {
             var req = new RetrieveActivePathRequest()
             {
@@ -28,7 +28,7 @@ namespace Vermaat.Crm.Specflow
             return GlobalTestingContext.ConnectionManager.CurrentConnection.Execute<RetrieveActivePathResponse>(req).ProcessStages.Entities.ToArray();
         }
 
-        public static Entity GetProcessInstanceOfRecord(CrmTestingContext crmContext, EntityReference crmRecord)
+        public static Entity GetProcessInstanceOfRecord(ICrmTestingContext crmContext, EntityReference crmRecord)
         {
             if (crmRecord == null)
             {
