@@ -5,7 +5,7 @@
     <AssemblyTitle>Vermaat.Crm.Specflow.Expressions</AssemblyTitle>
     <Configurations>Debug;Release;NuGetRelease</Configurations>
     <PackageId>RentReady.Vermaat.Crm.Specflow.Expressions</PackageId>
-    <TargetFramework>net6.0</TargetFramework>
+	<TargetFrameworks>net6.0;net462;netcoreapp3.1</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NuGetRelease|AnyCPU'">
