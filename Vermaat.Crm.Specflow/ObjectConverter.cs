@@ -25,7 +25,7 @@ namespace Vermaat.Crm.Specflow
             _datetimeFormat = $"{_dateonlyFormat} {HelperMethods.GetAppSettingsValue("TimeFormat", false)}";
         }
 
-        public static object ToCrmObject(string entityName, string attributeName, string value, CrmTestingContext context, ConvertedObjectType objectType = ConvertedObjectType.Default)
+        public static object ToCrmObject(string entityName, string attributeName, string value, ICrmTestingContext context, ConvertedObjectType objectType = ConvertedObjectType.Default)
         {
             Logger.WriteLine($"Converting CRM Object. Entity: {entityName}, Attribute: {attributeName}, Value: {value}, ObjectType: {objectType}");
             if (string.IsNullOrWhiteSpace(value))
@@ -68,7 +68,7 @@ namespace Vermaat.Crm.Specflow
             return parsed.ToString(format);
         }
 
-        private static object GetConvertedValue(CrmTestingContext context, AttributeMetadata metadata, string value, ConvertedObjectType objectType)
+        private static object GetConvertedValue(ICrmTestingContext context, AttributeMetadata metadata, string value, ConvertedObjectType objectType)
         {
             switch (metadata.AttributeType)
             {
@@ -119,7 +119,7 @@ namespace Vermaat.Crm.Specflow
             }
         }
 
-        private static object ParsePartyList(CrmTestingContext context, AttributeMetadata metadata, string value)
+        private static object ParsePartyList(ICrmTestingContext context, AttributeMetadata metadata, string value)
         {
             var splitted = value.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -181,7 +181,7 @@ namespace Vermaat.Crm.Specflow
             }
         }
 
-        private static object ParseVirtualType(CrmTestingContext context, AttributeMetadata metadata, string value)
+        private static object ParseVirtualType(ICrmTestingContext context, AttributeMetadata metadata, string value)
         {
 
             if (metadata.AttributeTypeName == AttributeTypeDisplayName.MultiSelectPicklistType)
@@ -194,7 +194,7 @@ namespace Vermaat.Crm.Specflow
             }
         }
 
-        public static SetStateRequest ToSetStateRequest(EntityReference target, string desiredstatus, CrmTestingContext context)
+        public static SetStateRequest ToSetStateRequest(EntityReference target, string desiredstatus, ICrmTestingContext context)
         {
             var attributeMd = GlobalTestingContext.Metadata.GetAttributeMetadata(target.LogicalName, Constants.CRM.STATUSCODE) as StatusAttributeMetadata;
             var optionMd = attributeMd.OptionSet.Options.Where(o => o.Label.IsLabel(GlobalTestingContext.LanguageCode, desiredstatus)).FirstOrDefault() as StatusOptionMetadata;
@@ -207,12 +207,12 @@ namespace Vermaat.Crm.Specflow
             };
         }
 
-        public static EntityReference GetLookupValue(CrmTestingContext context, string alias, string targetEntity)
+        public static EntityReference GetLookupValue(ICrmTestingContext context, string alias, string targetEntity)
         {
             return GetLookupValue(context, alias, targetEntity, new ConditionExpression[0]);
         }
 
-        public static EntityReference GetLookupValue(CrmTestingContext context, string alias, string targetEntity, IEnumerable<ConditionExpression> addtionalLookupFilters)
+        public static EntityReference GetLookupValue(ICrmTestingContext context, string alias, string targetEntity, IEnumerable<ConditionExpression> addtionalLookupFilters)
         {
             Logger.WriteLine($"Getting lookupvalue for entity {targetEntity}");
 
@@ -246,7 +246,7 @@ namespace Vermaat.Crm.Specflow
             return col.Entities.FirstOrDefault()?.ToEntityReference(targetMd.PrimaryNameAttribute);
         }
 
-        private static EntityReference GetLookupValue(CrmTestingContext context, AttributeMetadata metadata, string alias)
+        private static EntityReference GetLookupValue(ICrmTestingContext context, AttributeMetadata metadata, string alias)
         {
             var lookupMd = (LookupAttributeMetadata)metadata;
             foreach (string targetEntity in lookupMd.Targets)
@@ -261,7 +261,7 @@ namespace Vermaat.Crm.Specflow
             throw new TestExecutionException(Constants.ErrorCodes.LOOKUP_NOT_FOUND, alias, string.Join(", ", lookupMd.Targets));
         }
 
-        private static OptionSetValue GetOptionSetValue(AttributeMetadata metadata, string value, CrmTestingContext context)
+        private static OptionSetValue GetOptionSetValue(AttributeMetadata metadata, string value, ICrmTestingContext context)
         {
             var optionMd = metadata as EnumAttributeMetadata;
 
@@ -284,7 +284,7 @@ namespace Vermaat.Crm.Specflow
         /// <param name="context"></param>
         /// <param name="objectType"></param>
         /// <returns></returns>
-        private static object GetTwoOptionValue(AttributeMetadata metadata, string value, CrmTestingContext context)
+        private static object GetTwoOptionValue(AttributeMetadata metadata, string value, ICrmTestingContext context)
         {
             var optionMd = metadata as BooleanAttributeMetadata;
 
