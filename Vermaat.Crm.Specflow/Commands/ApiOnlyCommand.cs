@@ -4,9 +4,9 @@ namespace Vermaat.Crm.Specflow.Commands
 {
     public abstract class ApiOnlyCommandFunc<TResult> : ICommandFunc<TResult>
     {
-        protected readonly CrmTestingContext _crmContext;
+        protected readonly ICrmTestingContext _crmContext;
 
-        public ApiOnlyCommandFunc(CrmTestingContext crmContext)
+        public ApiOnlyCommandFunc(ICrmTestingContext crmContext)
         {
             _crmContext = crmContext;
         }
@@ -23,9 +23,9 @@ namespace Vermaat.Crm.Specflow.Commands
 
     public abstract class ApiOnlyCommand : ICommand
     {
-        protected readonly CrmTestingContext _crmContext;
+        protected readonly ICrmTestingContext _crmContext;
 
-        public ApiOnlyCommand(CrmTestingContext crmContext)
+        public ApiOnlyCommand(ICrmTestingContext crmContext)
         {
             _crmContext = crmContext;
         }

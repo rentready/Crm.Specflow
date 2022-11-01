@@ -16,7 +16,7 @@ namespace Vermaat.Crm.Specflow
         public static int LanguageCode { get; set; }
         public static ErrorCodes ErrorCodes { get; }
 
-        internal static BrowserManager BrowserManager { get; }
+        public static BrowserManager BrowserManager { get; }
 
         static GlobalTestingContext()
         {

@@ -4,16 +4,16 @@ using Vermaat.Crm.Specflow.EasyRepro;
 
 namespace Vermaat.Crm.Specflow
 {
-    public class SeleniumTestingContext
+    public class SeleniumTestingContext : ISeleniumTestingContext
     {
 
-        private readonly CrmTestingContext _crmContext;
+        private readonly ICrmTestingContext _crmContext;
 
         public BrowserOptions BrowserOptions { get; }
         public string CurrentApp { get; set; }
         public bool IsLoggedIn { get; set; }
 
-        public SeleniumTestingContext(CrmTestingContext crmContext)
+        public SeleniumTestingContext(ICrmTestingContext crmContext)
         {
             _crmContext = crmContext;
             BrowserOptions = new BrowserOptions()

@@ -134,7 +134,7 @@ namespace Vermaat.Crm.Specflow
             Logger.WriteLine("Form load completed");
         }
 
-        public static CommandAction GetPreferredCommandActionFromTarget(CrmTestingContext crmContext)
+        public static CommandAction GetPreferredCommandActionFromTarget(ICrmTestingContext crmContext)
         {
             if (crmContext.IsTarget(Constants.SpecFlow.TARGET_API))
             {

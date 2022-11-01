@@ -11,7 +11,7 @@ using Vermaat.Crm.Specflow.Entities;
 
 namespace Vermaat.Crm.Specflow.EasyRepro
 {
-    internal class BrowserManager : IDisposable
+    public class BrowserManager : IDisposable
     {
         private readonly LocalizedTexts _localizedTexts;
         private readonly Dictionary<BrowserType, Dictionary<string, UCIBrowser>> _browserCache;

@@ -9,7 +9,7 @@ using TechTalk.SpecFlow;
 namespace Vermaat.Crm.Specflow
 {
     [Binding]
-    public class CrmTestingContext
+    public class CrmTestingContext : ICrmTestingContext
     {
 
         public RecordBuilder RecordBuilder { get; }
@@ -42,6 +42,6 @@ namespace Vermaat.Crm.Specflow
 
             return _targets.Contains(target.ToLower());
         }
-        
+
     }
 }
