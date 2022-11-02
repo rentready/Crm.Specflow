@@ -1,4 +1,5 @@
-﻿using Microsoft.Dynamics365.UIAutomation.Api.UCI;
+﻿using BoDi;
+using Microsoft.Dynamics365.UIAutomation.Api.UCI;
 using Microsoft.Dynamics365.UIAutomation.Browser;
 using OpenQA.Selenium;
 using System;
@@ -20,13 +21,15 @@ namespace Vermaat.Crm.Specflow
         private readonly FeatureContext _featureContext;
         private readonly ScenarioContext _scenarioContext;
 
-        public Hooks(SeleniumTestingContext seleniumTestingContext, CrmTestingContext crmContext,
-                     FeatureContext featureContext, ScenarioContext scenarioContext)
+        public Hooks(CrmTestingContext crmContext, 
+                     FeatureContext featureContext, ScenarioContext scenarioContext, IObjectContainer objectContainer)
         {
-            _seleniumContext = seleniumTestingContext;
+            _seleniumContext = new SeleniumTestingContext(crmContext);
             _crmContext = crmContext;
             _featureContext = featureContext;
             _scenarioContext = scenarioContext;
+            objectContainer.RegisterInstanceAs<ICrmTestingContext>(crmContext);
+            objectContainer.RegisterInstanceAs<ISeleniumTestingContext>(_seleniumContext);
         }
 
         /// <summary>
