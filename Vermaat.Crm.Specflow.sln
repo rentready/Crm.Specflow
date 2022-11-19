@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vermaat.Crm.Specflow.Sample
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vermaat.Crm.Specflow.Expressions", "Vermaat.Crm.Specflow.Expressions\Vermaat.Crm.Specflow.Expressions.csproj", "{473D4530-AC23-4A29-948E-96AD3A52D074}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AD1E9E1D-0045-4CCA-B6DE-A27988D712DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

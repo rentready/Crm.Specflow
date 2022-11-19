@@ -1,6 +1,6 @@
 ﻿Feature: LookupDataType
 
-@Chrome @Firefox @Cleanup @Set1
+@Target:Chrome @Target:Firefox @Cleanup @Set1
 Scenario: Lookup with multiple results tests
 Given an account named FirstAccount with the following values
     | Property     | Value                   |
@@ -27,7 +27,7 @@ Then TestLookup has the following values
     | Company Name | SecondAccount    |
     | Email        | someone@test.com |
 
-@Chrome @Firefox @Cleanup @Set1
+@Target:Chrome @Target:Firefox @Cleanup @Set1
 Scenario: Lookup test - Special Characters
 Given an account named FirstAccount with the following values
     | Property     | Value                                 |
@@ -48,7 +48,7 @@ Then TestLookup has the following values
     | Company Name | FirstAccount     |
     | Email        | someone@test.com |
 
-@API @Cleanup @Set1
+@Target:API @Cleanup @Set1
 Scenario: Assigning alias to a lookup value
 Given an account named TestAccount with the following values
 	| Property     | Value                  |

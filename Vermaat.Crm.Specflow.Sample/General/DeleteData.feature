@@ -1,6 +1,6 @@
 ﻿Feature: DeleteData
 
-@API @Chrome @Firefox @Cleanup @Set1
+@Target:API @Target:Chrome @Target:Firefox @Cleanup @Set1
 Scenario: Delete a contact
 	Given an account named TestAccount with the following values
 		| Property     | Value                   |

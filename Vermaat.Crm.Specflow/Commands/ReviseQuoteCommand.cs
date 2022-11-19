@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechTalk.SpecFlow;
 using Vermaat.Crm.Specflow.EasyRepro;
 
 namespace Vermaat.Crm.Specflow.Commands
@@ -16,8 +17,8 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly string _toReviseAlias;
         private readonly string _newQuoteAlias;
 
-        public ReviseQuoteCommand(CrmTestingContext crmContext, SeleniumTestingContext selenumContext, string toReviseAlias, string newQuoteAlias)
-            : base(crmContext, selenumContext)
+        public ReviseQuoteCommand(ScenarioContext scenarioContext, SeleniumTestingContext selenumContext, string toReviseAlias, string newQuoteAlias)
+            : base(scenarioContext, selenumContext)
         {
             _toReviseAlias = toReviseAlias;
             _newQuoteAlias = newQuoteAlias;

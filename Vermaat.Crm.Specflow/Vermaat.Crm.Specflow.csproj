@@ -41,6 +41,7 @@
     <PackageReference Include="RentReady.Dynamics365.UIAutomation.Api" Version="9.2.22023.129" />
     <PackageReference Include="Selenium.Support" Version="4.6.0" />
     <PackageReference Include="SpecFlow" Version="3.9.74" />
+    <PackageReference Include="SpecFlow.Contrib.Variants" Version="3.9.74" />
   </ItemGroup>
 
 </Project>

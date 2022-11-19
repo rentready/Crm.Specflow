@@ -1,6 +1,6 @@
 ﻿Feature: DecimalDataType
 
-@API @Chrome @Cleanup @Set1
+@Target:API @Target:Chrome @Cleanup @Set1
 Scenario Outline: Filling Decimal fields
 Given the current logged in user's settings named CurrentUserSettings
 And an account named TestAccount with the following values

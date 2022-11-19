@@ -1,6 +1,6 @@
 ﻿Feature: UpdateData
 
-@API @Chrome @Firefox @Cleanup @SingleFilter @Set1
+@Target:API @Target:Chrome @Target:Firefox @Cleanup @SingleFilter @Set1
 Scenario: Update an existing Account
 Given an account named TestAccount with the following values
     | Property     | Value                   |
@@ -23,7 +23,7 @@ Then TestAccount has the following values
     | Industry     | Consulting              |
     | Description  | Update multi line       |
 
-@API @Chrome @Firefox @Cleanup @Set1
+@Target:API @Target:Chrome @Target:Firefox @Cleanup @Set1
 Scenario: Basic contact test 
 Given a contact named TestContact with the following values
     | Property   | Value |
@@ -40,7 +40,7 @@ Then TestContact has the following values
     | Last Name  | Smith                  |
     | Job Title  | Chief Lazyness Officer |
 
-@API @Chrome @Firefox @Cleanup @Set1
+@Target:API @Target:Chrome @Target:Firefox @Cleanup @Set1
 Scenario: Clearing values of Account
 Given an account named TestAccount with the following values
     | Property     | Value                   |
@@ -62,7 +62,7 @@ Then TestAccount has the following values
     | Industry     |              |
     | Description  |              |
 
-@Chrome @Firefox @Cleanup @Set1
+@Target:Chrome @Target:Firefox @Cleanup @Set1
 Scenario: Setting Account Header Field
 Given an account named TestAccount with the following values
     | Property       | Value |

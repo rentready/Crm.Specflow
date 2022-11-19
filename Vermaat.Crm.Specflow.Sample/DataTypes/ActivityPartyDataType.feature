@@ -1,6 +1,6 @@
 ﻿Feature: ActivityPartyDataType
 
-@API @Chrome @Firefox @Cleanup @Set2
+@Target:API @Target:Chrome @Target:Firefox @Cleanup @Set2
 Scenario: Create Phonecall record
 	Given an account named TestAccount with the following values
 		| Property     | Value         |

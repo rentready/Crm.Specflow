@@ -1,6 +1,6 @@
 ﻿Feature: StringDataType
 
-@API @Chrome @Firefox @Cleanup @Set1
+@Target:API @Target:Chrome @Target:Firefox @Cleanup @Set1
 Scenario: Test text fields
 When an account named TestAccount is created with the following values
 	| Property     | Value                   |

@@ -8,6 +8,8 @@
 
   <ItemGroup>
 	  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+	  <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="107.0.5304.6200" />
+	  <PackageReference Include="SpecFlow.Contrib.Variants" Version="3.9.74" />
 	  <PackageReference Include="SpecFlow.xUnit" Version="3.9.74" />
 	  <PackageReference Include="xunit" Version="2.4.2" />
 	  <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" />
@@ -19,40 +21,37 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="API.runsettings">
+    <None Update="content\API.runsettings">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="API.srprofile">
+    <None Update="content\API.srprofile">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="secrets.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="appsettings.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Chrome.runsettings">
+    <None Update="content\Chrome.runsettings">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Chrome.srprofile">
+    <None Update="content\Chrome.srprofile">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Default.runsettings">
+    <None Update="content\Default.runsettings">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Default.srprofile">
+    <None Update="content\Default.srprofile">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="DefaultData.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Firefox.runsettings">
+    <None Update="content\Firefox.runsettings">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Firefox.srprofile">
+    <None Update="content\Firefox.srprofile">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="LocalizedTexts.json">

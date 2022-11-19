@@ -13,36 +13,38 @@ namespace Vermaat.Crm.Specflow.Steps
     {
         private readonly CrmTestingContext _crmContext;
         private readonly SeleniumTestingContext _selenumContext;
+        private readonly ScenarioContext _scenarioContext;
 
-        public QuoteSteps(CrmTestingContext crmContext, SeleniumTestingContext selenumContext)
+        public QuoteSteps(CrmTestingContext crmContext, SeleniumTestingContext selenumContext, ScenarioContext scenarioContext)
         {
             _crmContext = crmContext;
             _selenumContext = selenumContext;
+            _scenarioContext = scenarioContext;
         }
 
         [When(@"the quote (.*) is activated")]
         public void ActivateQuote(string alias)
         {
-            _crmContext.CommandProcessor.Execute(new ActivateQuoteCommand(_crmContext, _selenumContext, alias));
+            _crmContext.CommandProcessor.Execute(new ActivateQuoteCommand(_scenarioContext, _selenumContext, alias));
         }
 
         [When(@"(.*) is converted to a sales order named (.*)")]
         public void ConvertQuoteToSalesOrder(string quoteAlias, string orderAlias)
         {
-            _crmContext.CommandProcessor.Execute(new ConvertToSalesOrderCommand(_crmContext, _selenumContext, quoteAlias, orderAlias));
+            _crmContext.CommandProcessor.Execute(new ConvertToSalesOrderCommand(_scenarioContext, _selenumContext, quoteAlias, orderAlias));
         }
 
         [When(@"(.*) is activated and converted to a sales order named (.*)")]
         public void ActivateQuoteAndConvertQuoteToSalesOrder(string quoteAlias, string orderAlias)
         {
-            _crmContext.CommandProcessor.Execute(new ActivateQuoteCommand(_crmContext, _selenumContext, quoteAlias));
-            _crmContext.CommandProcessor.Execute(new ConvertToSalesOrderCommand(_crmContext, _selenumContext, quoteAlias, orderAlias));
+            _crmContext.CommandProcessor.Execute(new ActivateQuoteCommand(_scenarioContext, _selenumContext, quoteAlias));
+            _crmContext.CommandProcessor.Execute(new ConvertToSalesOrderCommand(_scenarioContext, _selenumContext, quoteAlias, orderAlias));
         }
 
         [When(@"(.*) is revised and its revised quote is named (.*)")]
         public void ReviseQuote(string quoteAlias, string newQuoteAlias)
         {
-            _crmContext.CommandProcessor.Execute(new ReviseQuoteCommand(_crmContext, _selenumContext, quoteAlias, newQuoteAlias));
+            _crmContext.CommandProcessor.Execute(new ReviseQuoteCommand(_scenarioContext, _selenumContext, quoteAlias, newQuoteAlias));
         }
     }
 }

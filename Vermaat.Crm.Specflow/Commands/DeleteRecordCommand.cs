@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xrm.Sdk;
 using System;
+using TechTalk.SpecFlow;
 using Vermaat.Crm.Specflow.EasyRepro;
 
 namespace Vermaat.Crm.Specflow.Commands
@@ -9,8 +10,8 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly EntityReference _toDelete;
         private readonly string _alias;
 
-        public DeleteRecordCommand(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext, string alias)
-            :base(crmContext, seleniumContext)
+        public DeleteRecordCommand(ICrmTestingContext crmContext, SeleniumTestingContext seleniumContext, ScenarioContext scenarioContext, string alias)
+            :base(scenarioContext, seleniumContext)
         {
             _toDelete = crmContext.RecordCache.Get(alias, true);
             _alias = alias;

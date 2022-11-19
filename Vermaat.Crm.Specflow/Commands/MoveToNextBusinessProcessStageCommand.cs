@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xrm.Sdk;
 using System;
+using TechTalk.SpecFlow;
 using Vermaat.Crm.Specflow.EasyRepro;
 
 namespace Vermaat.Crm.Specflow.Commands
@@ -14,8 +15,8 @@ namespace Vermaat.Crm.Specflow.Commands
 
         private readonly string _alias;
 
-        public MoveToNextBusinessProcessStageCommand(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext,
-            string alias) : base(crmContext, seleniumContext)
+        public MoveToNextBusinessProcessStageCommand(ScenarioContext scenarioContext, SeleniumTestingContext seleniumContext,
+            string alias) : base(scenarioContext, seleniumContext)
         {
             _alias = alias;
         }

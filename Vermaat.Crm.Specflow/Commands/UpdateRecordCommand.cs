@@ -12,9 +12,9 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly EntityReference _toUpdate;
         private readonly Table _criteria;
 
-        public UpdateRecordCommand(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext, EntityReference toUpdate,
+        public UpdateRecordCommand(ScenarioContext scenarioContext, SeleniumTestingContext seleniumContext, EntityReference toUpdate,
             Table criteria)
-            : base(crmContext, seleniumContext)
+            : base(scenarioContext, seleniumContext)
         {
             _toUpdate = toUpdate;
             _criteria = criteria;

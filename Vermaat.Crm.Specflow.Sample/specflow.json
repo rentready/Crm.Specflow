@@ -1,4 +1,7 @@
 ﻿{
+  "pluginparameters": {
+    "variantkey": "Target"
+  },
   "stepAssemblies": [
     { "assembly": "Vermaat.Crm.Specflow" }
   ]

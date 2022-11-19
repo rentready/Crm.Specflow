@@ -13,18 +13,20 @@ namespace Vermaat.Crm.Specflow.Steps
     {
         private readonly CrmTestingContext _crmContext;
         private readonly SeleniumTestingContext _selenumContext;
+        private readonly ScenarioContext _scenarioContext;
 
-        public OpportunitySteps(CrmTestingContext crmContext, SeleniumTestingContext selenumContext)
+        public OpportunitySteps(CrmTestingContext crmContext, SeleniumTestingContext selenumContext, ScenarioContext scenarioContext)
         {
             _crmContext = crmContext;
             _selenumContext = selenumContext;
+            _scenarioContext = scenarioContext;
         }
 
         [When(@"the opportunity (.*) is closed with the following values")]
         public void WinOpportunity(string alias, Table closeData)
         {
             _crmContext.TableConverter.ConvertTable("opportunityclose", closeData);
-            _crmContext.CommandProcessor.Execute(new CloseOpportunityCommand(_crmContext, _selenumContext, alias, closeData));
+            _crmContext.CommandProcessor.Execute(new CloseOpportunityCommand(_scenarioContext, _selenumContext, alias, closeData));
         }
     }
 }

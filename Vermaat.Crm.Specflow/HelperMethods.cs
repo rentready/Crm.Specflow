@@ -5,6 +5,7 @@ using OpenQA.Selenium;
 using System;
 using System.Linq;
 using System.Threading;
+using TechTalk.SpecFlow;
 using Vermaat.Crm.Specflow.EasyRepro;
 using Vermaat.Crm.Specflow.FormLoadConditions;
 
@@ -134,16 +135,20 @@ namespace Vermaat.Crm.Specflow
             Logger.WriteLine("Form load completed");
         }
 
-        public static CommandAction GetPreferredCommandActionFromTarget(ICrmTestingContext crmContext)
+        public static CommandAction GetPreferredCommandActionFromTarget(ScenarioContext scenarioContext)
         {
-            if (crmContext.IsTarget(Constants.SpecFlow.TARGET_API))
+            scenarioContext.TryGetValue("Target", out var target);
+            var targetStr = Convert.ToString(target);
+
+            if (targetStr == Constants.SpecFlow.TARGET_API)
             {
                 return CommandAction.PreferApi;
             }
-            else if (crmContext.IsTarget(Constants.SpecFlow.TARGET_Chrome) ||
-                     crmContext.IsTarget(Constants.SpecFlow.TARGET_Edge) ||
-                     crmContext.IsTarget(Constants.SpecFlow.TARGET_Firefox) ||
-                     crmContext.IsTarget(Constants.SpecFlow.TARGET_InternetExplorer))
+            else if (new[] {
+                Constants.SpecFlow.TARGET_Chrome,
+                Constants.SpecFlow.TARGET_Edge,
+                Constants.SpecFlow.TARGET_Firefox,
+                Constants.SpecFlow.TARGET_InternetExplorer}.Contains(target))
             {
                 return CommandAction.ForceBrowser;
             }

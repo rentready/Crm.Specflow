@@ -13,11 +13,13 @@ namespace Vermaat.Crm.Specflow.Steps
     {
         private readonly CrmTestingContext _crmContext;
         private readonly SeleniumTestingContext _seleniumContext;
+        private readonly ScenarioContext _scenarioContext;
 
-        public GeneralSteps(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext)
+        public GeneralSteps(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext, ScenarioContext scenarioContext)
         {
             _crmContext = crmContext;
             _seleniumContext = seleniumContext;
+            _scenarioContext = scenarioContext;
         }
 
 
@@ -37,7 +39,7 @@ namespace Vermaat.Crm.Specflow.Steps
         public void GivenEntityWithValues(string entityName, string alias, Table criteria)
         {
             _crmContext.TableConverter.ConvertTable(entityName, criteria);
-            _crmContext.CommandProcessor.Execute(new CreateRecordCommand(_crmContext, _seleniumContext, entityName, criteria, alias));
+            _crmContext.CommandProcessor.Execute(new CreateRecordCommand(_crmContext, _seleniumContext, _scenarioContext, entityName, criteria, alias));
         }
 
         [Given(@"(.*) has the process stage (.*)")]
@@ -52,7 +54,7 @@ namespace Vermaat.Crm.Specflow.Steps
         public void GivenRelatedEntityWithValues(string entityName, string parentAlias, string childAlias, Table criteria)
         {
             _crmContext.TableConverter.ConvertTable(entityName, criteria);
-            _crmContext.CommandProcessor.Execute(new CreateRelatedRecordCommand(_crmContext, _seleniumContext, entityName, criteria, childAlias, parentAlias));
+            _crmContext.CommandProcessor.Execute(new CreateRelatedRecordCommand(_crmContext, _seleniumContext, _scenarioContext, entityName, criteria, childAlias, parentAlias));
         }
 
         #endregion
@@ -62,7 +64,7 @@ namespace Vermaat.Crm.Specflow.Steps
         [When(@"(.*) is moved to the next process stage")]
         public void MoveToNextStage(string alias)
         {
-            _crmContext.CommandProcessor.Execute(new MoveToNextBusinessProcessStageCommand(_crmContext, _seleniumContext, alias));
+            _crmContext.CommandProcessor.Execute(new MoveToNextBusinessProcessStageCommand(_scenarioContext, _seleniumContext, alias));
         }
 
         [When(@"(.*) is updated with the following values")]
@@ -70,7 +72,7 @@ namespace Vermaat.Crm.Specflow.Steps
         {
             EntityReference aliasRef = _crmContext.RecordCache[alias];
             _crmContext.TableConverter.ConvertTable(aliasRef.LogicalName, criteria);
-            _crmContext.CommandProcessor.Execute(new UpdateRecordCommand(_crmContext, _seleniumContext, aliasRef, criteria));
+            _crmContext.CommandProcessor.Execute(new UpdateRecordCommand(_scenarioContext, _seleniumContext, aliasRef, criteria));
         }
 
         [When(@"all asynchronous processes for (.*) are finished")]
@@ -88,7 +90,7 @@ namespace Vermaat.Crm.Specflow.Steps
         [When(@"(.*) is deleted")]
         public void WhenAliasIsDeleted(string alias)
         {
-            _crmContext.CommandProcessor.Execute(new DeleteRecordCommand(_crmContext, _seleniumContext, alias));
+            _crmContext.CommandProcessor.Execute(new DeleteRecordCommand(_crmContext, _seleniumContext, _scenarioContext, alias));
         }
 
         [When(@"(.*) is assigned to (.*)")]
