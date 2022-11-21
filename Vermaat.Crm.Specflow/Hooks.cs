@@ -41,13 +41,13 @@ namespace Vermaat.Crm.Specflow
             AppElements.Xpath[AppReference.Entity.TabList] = "//ul[contains(@id, \"tablist\")]";
         }
 
-        [BeforeScenario("API")]
+        [BeforeScenario("Target:API")]
         public void APISetup()
         {
 
         }
 
-        [BeforeScenario("Chrome")]
+        [BeforeScenario("Target:Chrome")]
         public void ChromeSetup()
         {
             if (_crmContext.IsTarget("Chrome"))
@@ -56,7 +56,7 @@ namespace Vermaat.Crm.Specflow
             }
         }
 
-        [BeforeScenario("Edge")]
+        [BeforeScenario("Target:Edge")]
         public void EdgeSetup()
         {
             if (_crmContext.IsTarget("Edge"))
@@ -65,7 +65,7 @@ namespace Vermaat.Crm.Specflow
             }
         }
 
-        [BeforeScenario("Firefox")]
+        [BeforeScenario("Target:Firefox")]
         public void FirefoxSetup()
         {
             if (_crmContext.IsTarget("Firefox"))
@@ -74,7 +74,7 @@ namespace Vermaat.Crm.Specflow
             }
         }
 
-        [BeforeScenario("IE")]
+        [BeforeScenario("Target:IE")]
         public void IESetup()
         {
             if (_crmContext.IsTarget("IE"))

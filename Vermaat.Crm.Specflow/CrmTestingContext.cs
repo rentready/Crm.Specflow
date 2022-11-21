@@ -28,11 +28,19 @@ namespace Vermaat.Crm.Specflow
             CommandProcessor = new CommandProcessor(scenarioContext);
             RecordCache = new AliasedRecordCache(GlobalTestingContext.Metadata);
 
-            _targets = ConfigurationManager.AppSettings["Target"]
+            var targets = ConfigurationManager.AppSettings["Target"]?
                 .ToLower()
                 .Split('_')
                 .Select(splitted => splitted.Trim())
-                .ToArray();
+                .ToList() ?? new System.Collections.Generic.List<string>();
+
+            scenarioContext.TryGetValue("Target", out var scenarioTarget);
+            if (scenarioTarget != null)
+            {
+                targets.Add(Convert.ToString(scenarioTarget).ToLower());
+            }
+
+            _targets = targets.ToArray();
         }
 
         public bool IsTarget(string target)
