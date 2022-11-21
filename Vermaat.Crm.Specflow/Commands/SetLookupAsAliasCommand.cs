@@ -16,7 +16,7 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly string _lookupFieldName;
         private readonly string _lookupAlias;
 
-        public SetLookupAsAliasCommand(CrmTestingContext crmContext, string alias, string lookupFieldName, string lookupAlias) : base(crmContext)
+        public SetLookupAsAliasCommand(ICrmTestingContext crmContext, string alias, string lookupFieldName, string lookupAlias) : base(crmContext)
         {
             _alias = alias;
             _lookupFieldName = lookupFieldName;

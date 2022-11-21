@@ -17,7 +17,7 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly string _relatedEntityName;
         private readonly Table _expectedRecords;
 
-        public AssertNNRelationshipCommand(CrmTestingContext crmContext, string alias, string relatedEntityName, Table expectedRecords) : base(crmContext)
+        public AssertNNRelationshipCommand(ICrmTestingContext crmContext, string alias, string relatedEntityName, Table expectedRecords) : base(crmContext)
         {
             _alias = alias;
             _relatedEntityName = relatedEntityName;

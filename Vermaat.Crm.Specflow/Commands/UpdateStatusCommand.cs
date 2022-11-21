@@ -8,7 +8,7 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly string _alias;
         private readonly string _statusCodeText;
 
-        public UpdateStatusCommand(CrmTestingContext crmContext, string alias, string statusCodeText) : base(crmContext)
+        public UpdateStatusCommand(ICrmTestingContext crmContext, string alias, string statusCodeText) : base(crmContext)
         {
             _alias = alias;
             _statusCodeText = statusCodeText;

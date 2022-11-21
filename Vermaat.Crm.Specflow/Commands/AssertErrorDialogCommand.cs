@@ -11,7 +11,7 @@ namespace Vermaat.Crm.Specflow.Commands
     {
         private readonly string _expectedError;
 
-        public AssertErrorDialogCommand(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext, string expectedError) 
+        public AssertErrorDialogCommand(ICrmTestingContext crmContext, SeleniumTestingContext seleniumContext, string expectedError) 
             : base(crmContext, seleniumContext)
         {
             _expectedError = expectedError;

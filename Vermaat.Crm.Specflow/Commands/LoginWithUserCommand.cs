@@ -17,7 +17,7 @@ namespace Vermaat.Crm.Specflow.Commands
     {
         private readonly UserProfile _userProfile;
 
-        public LoginWithUserCommand(CrmTestingContext crmContext, UserProfile userProfile)
+        public LoginWithUserCommand(ICrmTestingContext crmContext, UserProfile userProfile)
             : base(crmContext)
         {
             _userProfile = userProfile;

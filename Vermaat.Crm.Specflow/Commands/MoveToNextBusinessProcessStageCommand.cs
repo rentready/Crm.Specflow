@@ -14,7 +14,7 @@ namespace Vermaat.Crm.Specflow.Commands
 
         private readonly string _alias;
 
-        public MoveToNextBusinessProcessStageCommand(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext,
+        public MoveToNextBusinessProcessStageCommand(ICrmTestingContext crmContext, SeleniumTestingContext seleniumContext,
             string alias) : base(crmContext, seleniumContext)
         {
             _alias = alias;

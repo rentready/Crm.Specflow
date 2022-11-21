@@ -11,7 +11,7 @@ namespace Vermaat.Crm.Specflow.Steps
     [Binding]
     public class OpportunitySteps
     {
-        private readonly CrmTestingContext _crmContext;
+        private readonly ICrmTestingContext _crmContext;
         private readonly SeleniumTestingContext _selenumContext;
 
         public OpportunitySteps(CrmTestingContext crmContext, SeleniumTestingContext selenumContext)

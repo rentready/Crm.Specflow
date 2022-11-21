@@ -16,7 +16,7 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly string _toReviseAlias;
         private readonly string _newQuoteAlias;
 
-        public ReviseQuoteCommand(CrmTestingContext crmContext, SeleniumTestingContext selenumContext, string toReviseAlias, string newQuoteAlias)
+        public ReviseQuoteCommand(ICrmTestingContext crmContext, SeleniumTestingContext selenumContext, string toReviseAlias, string newQuoteAlias)
             : base(crmContext, selenumContext)
         {
             _toReviseAlias = toReviseAlias;

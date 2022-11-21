@@ -11,7 +11,7 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly Table _criteria;
         private readonly string _alias;
 
-        public CreateRecordCommand(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext,
+        public CreateRecordCommand(ICrmTestingContext crmContext, SeleniumTestingContext seleniumContext,
             string entityLogicalName, Table criteria, string alias)
             : base(crmContext, seleniumContext)
         {

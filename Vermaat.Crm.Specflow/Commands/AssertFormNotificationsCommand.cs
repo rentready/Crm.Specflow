@@ -14,7 +14,7 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly string _alias;
         private readonly Table _notificationTable;
 
-        public AssertFormNotificationsCommand(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext, string alias,
+        public AssertFormNotificationsCommand(ICrmTestingContext crmContext, SeleniumTestingContext seleniumContext, string alias,
             Table notificationTable) 
             : base(crmContext, seleniumContext)
         {

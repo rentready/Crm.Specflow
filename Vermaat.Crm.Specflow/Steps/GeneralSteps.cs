@@ -11,7 +11,7 @@ namespace Vermaat.Crm.Specflow.Steps
     [DeploymentItem("DefaultData.xml")]
     public class GeneralSteps
     {
-        private readonly CrmTestingContext _crmContext;
+        private readonly ICrmTestingContext _crmContext;
         private readonly SeleniumTestingContext _seleniumContext;
 
         public GeneralSteps(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext)

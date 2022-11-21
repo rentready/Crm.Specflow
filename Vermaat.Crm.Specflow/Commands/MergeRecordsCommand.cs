@@ -17,14 +17,14 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly Table _fieldsToPush;
         private readonly bool _mergeAll;
 
-        public MergeRecordsCommand(CrmTestingContext crmContext, EntityReference targetAlias, EntityReference subordindateAlias) : base(crmContext)
+        public MergeRecordsCommand(ICrmTestingContext crmContext, EntityReference targetAlias, EntityReference subordindateAlias) : base(crmContext)
         {
             _targetRecord = targetAlias;
             _subordinateRecord = subordindateAlias;
             _mergeAll = true;
         }
 
-        public MergeRecordsCommand(CrmTestingContext crmContext, EntityReference targetAlias, EntityReference subordindateAlias, Table mergeFields) : base(crmContext)
+        public MergeRecordsCommand(ICrmTestingContext crmContext, EntityReference targetAlias, EntityReference subordindateAlias, Table mergeFields) : base(crmContext)
         {
             _targetRecord = targetAlias;
             _subordinateRecord = subordindateAlias;

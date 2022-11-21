@@ -11,7 +11,7 @@ namespace Vermaat.Crm.Specflow.Commands
     {
         private readonly string _userAlias;
 
-        public GetCurrentUserSettingsCommand(CrmTestingContext crmContext, string userAlias)
+        public GetCurrentUserSettingsCommand(ICrmTestingContext crmContext, string userAlias)
             : base(crmContext)
         {
             _userAlias = userAlias;

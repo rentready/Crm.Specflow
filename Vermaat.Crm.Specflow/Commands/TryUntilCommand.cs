@@ -9,12 +9,12 @@ namespace Vermaat.Crm.Specflow.Commands
 {
     public class TryUntilCommand<TCommand> : ICommand where TCommand : ICommand
     {
-        private readonly CrmTestingContext _crmContext;
+        private readonly ICrmTestingContext _crmContext;
         private readonly TCommand _childCommand;
         private readonly TimeSpan _timeout;
         private readonly TimeSpan _waitPeriod;
 
-        public TryUntilCommand(CrmTestingContext crmContext, TCommand childCommand, TimeSpan timeout, TimeSpan waitPeriod)
+        public TryUntilCommand(ICrmTestingContext crmContext, TCommand childCommand, TimeSpan timeout, TimeSpan waitPeriod)
         {
             _crmContext = crmContext;
             _childCommand = childCommand;
@@ -50,14 +50,14 @@ namespace Vermaat.Crm.Specflow.Commands
 
     public class TryUntilCommandFunc<TCommand, TResult> : ICommandFunc<TResult> where TCommand : ICommandFunc<TResult>
     {
-        private readonly CrmTestingContext _crmContext;
+        private readonly ICrmTestingContext _crmContext;
         private readonly TCommand _childCommand;
         private readonly TimeSpan _timeout;
         private readonly TimeSpan _waitPeriod;
         private readonly Func<TResult, bool> _assertResultValid;
         private readonly Func<TResult, string> _timeoutMessageFunc;
 
-        public TryUntilCommandFunc(CrmTestingContext crmContext, TCommand childCommand, TimeSpan timeout,
+        public TryUntilCommandFunc(ICrmTestingContext crmContext, TCommand childCommand, TimeSpan timeout,
             TimeSpan waitPeriod, Func<TResult, bool> assertResultValid, Func<TResult, string> timeoutMessageFunc)
         {
             _crmContext = crmContext;

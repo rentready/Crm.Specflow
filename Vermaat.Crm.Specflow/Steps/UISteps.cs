@@ -15,7 +15,7 @@ namespace Vermaat.Crm.Specflow.Steps
     public class UISteps
     {
 
-        private readonly CrmTestingContext _crmContext;
+        private readonly ICrmTestingContext _crmContext;
         private readonly SeleniumTestingContext _seleniumContext;
 
 

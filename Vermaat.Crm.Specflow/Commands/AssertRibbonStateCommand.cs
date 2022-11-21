@@ -13,7 +13,7 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly string _alias;
         private readonly Table _ribbonState;
 
-        public AssertRibbonStateCommand(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext, string alias, Table ribbonState) 
+        public AssertRibbonStateCommand(ICrmTestingContext crmContext, SeleniumTestingContext seleniumContext, string alias, Table ribbonState) 
             : base(crmContext, seleniumContext)
         {
             _alias = alias;

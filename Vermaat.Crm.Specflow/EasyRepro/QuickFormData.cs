@@ -82,7 +82,7 @@ namespace Vermaat.Crm.Specflow.EasyRepro
             WaitUntilSaveCompleted();
         }
 
-        public void FillForm(CrmTestingContext crmContext, Table formData)
+        public void FillForm(ICrmTestingContext crmContext, Table formData)
         {
             Logger.WriteLine($"Filling Quick create form");
             var formState = new FormState(_app);

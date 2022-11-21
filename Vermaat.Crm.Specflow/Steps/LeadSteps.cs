@@ -9,7 +9,7 @@ namespace Vermaat.Crm.Specflow.Steps
     [Binding]
     public class LeadSteps
     {
-        private readonly CrmTestingContext _crmContext;
+        private readonly ICrmTestingContext _crmContext;
 
         public LeadSteps(CrmTestingContext crmContext)
         {

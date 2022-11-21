@@ -13,7 +13,7 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly bool _createContact;
         private readonly bool _createOpportunity;
 
-        public QualifyLeadCommand(CrmTestingContext crmContext, string alias, bool createAccount, bool createContact, bool createOpportunity) : base(crmContext)
+        public QualifyLeadCommand(ICrmTestingContext crmContext, string alias, bool createAccount, bool createContact, bool createOpportunity) : base(crmContext)
         {
             _alias = alias;
             _createAccount = createAccount;

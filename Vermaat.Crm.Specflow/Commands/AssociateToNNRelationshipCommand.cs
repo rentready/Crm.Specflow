@@ -15,7 +15,7 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly string _relatedEntityName;
         private readonly Table _recordsToConnect;
 
-        public AssociateToNNRelationshipCommand(CrmTestingContext crmContext, string alias, string relatedEntityName, Table recordsToConnect) : base(crmContext)
+        public AssociateToNNRelationshipCommand(ICrmTestingContext crmContext, string alias, string relatedEntityName, Table recordsToConnect) : base(crmContext)
         {
             _alias = alias;
             _relatedEntityName = relatedEntityName;

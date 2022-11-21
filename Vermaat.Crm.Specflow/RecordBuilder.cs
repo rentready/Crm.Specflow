@@ -14,10 +14,10 @@ namespace Vermaat.Crm.Specflow
 {
     public class RecordBuilder
     {
-        private readonly CrmTestingContext _crmContext;
+        private readonly ICrmTestingContext _crmContext;
         private Dictionary<string, DefaultDataField[]> _defaultData;
 
-        public RecordBuilder(CrmTestingContext context)
+        public RecordBuilder(ICrmTestingContext context)
         {
             _crmContext = context;
             _defaultData = ReadDefaultData();

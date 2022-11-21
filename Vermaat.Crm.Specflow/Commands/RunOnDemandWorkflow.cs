@@ -14,7 +14,7 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly string _workflowName;
         private readonly string _alias;
 
-        public RunOnDemandWorkflow(CrmTestingContext crmContext, string workflowName, string alias) : base(crmContext)
+        public RunOnDemandWorkflow(ICrmTestingContext crmContext, string workflowName, string alias) : base(crmContext)
         {
             _workflowName = workflowName;
             _alias = alias;

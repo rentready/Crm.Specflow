@@ -10,7 +10,7 @@ namespace Vermaat.Crm.Specflow
 {
     public class TableConverter
     {
-        private readonly CrmTestingContext _context;
+        private readonly ICrmTestingContext _context;
 
         public event EventHandler<TableEventArgs> OnTableProcessing;
         public event EventHandler<TableEventArgs> OnTableProcessed;
@@ -18,7 +18,7 @@ namespace Vermaat.Crm.Specflow
         public event EventHandler<TableRowEventArgs> OnRowProcessing;
         public event EventHandler<TableRowEventArgs> OnRowProcessed;
 
-        public TableConverter(CrmTestingContext context)
+        public TableConverter(ICrmTestingContext context)
         {
             _context = context;
         }

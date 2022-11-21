@@ -8,7 +8,7 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly string _aliasToAssign;
         private readonly string _aliasToAssignTo;
 
-        public AssignRecordCommand(CrmTestingContext crmContext, string aliasToAssign, string aliasToAssignTo) : base(crmContext)
+        public AssignRecordCommand(ICrmTestingContext crmContext, string aliasToAssign, string aliasToAssignTo) : base(crmContext)
         {
             _aliasToAssign = aliasToAssign;
             _aliasToAssignTo = aliasToAssignTo;

@@ -19,7 +19,7 @@ namespace Vermaat.Crm.Specflow.Commands
             public RequiredState? Required { get; set; }
         }
 
-        public AssertFormStateCommand(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext, EntityReference crmRecord, Table visibilityCriteria) :
+        public AssertFormStateCommand(ICrmTestingContext crmContext, SeleniumTestingContext seleniumContext, EntityReference crmRecord, Table visibilityCriteria) :
             base(crmContext, seleniumContext)
         {
             _crmRecord = crmRecord;

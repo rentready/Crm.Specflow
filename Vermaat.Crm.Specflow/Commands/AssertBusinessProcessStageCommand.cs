@@ -11,7 +11,7 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly string _alias;
         private readonly string _expectedStage;
 
-        public AssertBusinessProcessStageCommand(CrmTestingContext crmContext, string alias, string expectedStage) : base(crmContext)
+        public AssertBusinessProcessStageCommand(ICrmTestingContext crmContext, string alias, string expectedStage) : base(crmContext)
         {
             _alias = alias;
             _expectedStage = expectedStage;

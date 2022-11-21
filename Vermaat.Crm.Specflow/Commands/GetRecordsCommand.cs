@@ -8,7 +8,7 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly string _entityName;
         private readonly Table _criteria;
 
-        public GetRecordsCommand(CrmTestingContext crmContext, string entityName, Table criteria) : base(crmContext)
+        public GetRecordsCommand(ICrmTestingContext crmContext, string entityName, Table criteria) : base(crmContext)
         {
             _entityName = entityName;
             _criteria = criteria;

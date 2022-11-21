@@ -12,7 +12,7 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly string _alias;
         private readonly string _stageName;
 
-        public MoveToBusinessProcessStageCommand(CrmTestingContext crmContext, string alias, string stageName) : base(crmContext)
+        public MoveToBusinessProcessStageCommand(ICrmTestingContext crmContext, string alias, string stageName) : base(crmContext)
         {
             this._alias = alias;
             this._stageName = stageName;

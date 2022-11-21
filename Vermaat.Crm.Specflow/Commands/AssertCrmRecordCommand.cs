@@ -10,7 +10,7 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly EntityReference _crmRecord;
         private readonly Table _criteria;
 
-        public AssertCrmRecordCommand(CrmTestingContext crmContext, EntityReference crmRecord, Table criteria) : base(crmContext)
+        public AssertCrmRecordCommand(ICrmTestingContext crmContext, EntityReference crmRecord, Table criteria) : base(crmContext)
         {
             _crmRecord = crmRecord;
             _criteria = criteria;
