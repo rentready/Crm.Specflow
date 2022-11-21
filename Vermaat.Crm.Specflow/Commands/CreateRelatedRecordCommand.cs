@@ -16,11 +16,10 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly Table _criteria;
         private readonly string _alias;
         private readonly string _parentAlias;
-        private readonly ICrmTestingContext _crmContext;
 
-        public CreateRelatedRecordCommand(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext, ScenarioContext scenarioContext,
-            string entityLogicalName, Table criteria, string alias, string parentAlias)
-       : base(scenarioContext, seleniumContext)
+        public CreateRelatedRecordCommand(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext,
+       string entityLogicalName, Table criteria, string alias, string parentAlias)
+       : base(crmContext, seleniumContext)
         {
             _entityLogicalName = entityLogicalName;
             _criteria = criteria;

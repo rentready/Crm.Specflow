@@ -5,19 +5,19 @@ namespace Vermaat.Crm.Specflow.Commands
 {
     public abstract class BrowserCommandFunc<TResult> : ICommandFunc<TResult>
     {
+        protected readonly ICrmTestingContext _crmContext;
         protected readonly ISeleniumTestingContext _seleniumContext;
-        private readonly ScenarioContext _scenarioContext;
 
-        public BrowserCommandFunc(ScenarioContext scenarioContext, ISeleniumTestingContext seleniumContext)
+        public BrowserCommandFunc(ICrmTestingContext crmContext, ISeleniumTestingContext seleniumContext)
         {
+            _crmContext = crmContext;
             _seleniumContext = seleniumContext;
-            _scenarioContext = scenarioContext;
         }
 
         public TResult Execute(CommandAction commandAction = CommandAction.Default)
         {
             var actionToUse = commandAction == CommandAction.Default ?
-                HelperMethods.GetPreferredCommandActionFromTarget(_scenarioContext) : commandAction;
+                HelperMethods.GetPreferredCommandActionFromTarget(_crmContext) : commandAction;
 
             switch(actionToUse)
             {
@@ -40,18 +40,17 @@ namespace Vermaat.Crm.Specflow.Commands
     {
         protected readonly ICrmTestingContext _crmContext;
         protected readonly ISeleniumTestingContext _seleniumContext;
-        private readonly ScenarioContext _scenarioContext;
 
-        public BrowserCommand(ScenarioContext scenarioContext, ISeleniumTestingContext seleniumContext)
+        public BrowserCommand(ICrmTestingContext crmContext, ISeleniumTestingContext seleniumContext)
         {
-            _scenarioContext = scenarioContext;
+            _crmContext = crmContext;
             _seleniumContext = seleniumContext;
         }
 
         public void Execute(CommandAction commandAction = CommandAction.Default)
         {
             var actionToUse = commandAction == CommandAction.Default ?
-                HelperMethods.GetPreferredCommandActionFromTarget(_scenarioContext) : commandAction;
+                HelperMethods.GetPreferredCommandActionFromTarget(_crmContext) : commandAction;
 
             switch (actionToUse)
             {

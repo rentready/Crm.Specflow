@@ -3,7 +3,6 @@ using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Metadata;
 using Microsoft.Xrm.Sdk.Query;
 using System;
-using TechTalk.SpecFlow;
 using Vermaat.Crm.Specflow.EasyRepro;
 
 namespace Vermaat.Crm.Specflow.Commands
@@ -13,8 +12,8 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly string _alias;
         private readonly string _orderAlias;
 
-        public ConvertToSalesOrderCommand(ScenarioContext scenarioContext, SeleniumTestingContext seleniumContext, string quoteAlias, string orderAlias)
-            : base(scenarioContext, seleniumContext)
+        public ConvertToSalesOrderCommand(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext, string quoteAlias, string orderAlias)
+            : base(crmContext, seleniumContext)
         {
             _alias = quoteAlias;
             _orderAlias = orderAlias;

@@ -10,16 +10,14 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly string _entityLogicalName;
         private readonly Table _criteria;
         private readonly string _alias;
-        private readonly ICrmTestingContext _crmContext;
 
-        public CreateRecordCommand(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext, ScenarioContext scenarioContext,
+        public CreateRecordCommand(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext,
             string entityLogicalName, Table criteria, string alias)
-            : base(scenarioContext, seleniumContext)
+            : base(crmContext, seleniumContext)
         {
             _entityLogicalName = entityLogicalName;
             _criteria = criteria;
             _alias = alias;
-            _crmContext = crmContext;
         }
 
         protected override EntityReference ExecuteApi()

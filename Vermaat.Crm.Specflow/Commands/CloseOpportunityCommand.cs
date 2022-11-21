@@ -16,8 +16,8 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly string _alias;
         private readonly Table _closeData;
 
-        public CloseOpportunityCommand(ScenarioContext scenarioContext, SeleniumTestingContext seleniumContext,
-            string alias, Table closeData) : base(scenarioContext, seleniumContext)
+        public CloseOpportunityCommand(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext,
+            string alias, Table closeData) : base(crmContext, seleniumContext)
         {
             _alias = alias;
             _closeData = closeData;
