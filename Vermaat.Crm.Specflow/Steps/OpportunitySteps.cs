@@ -12,7 +12,7 @@ namespace Vermaat.Crm.Specflow.Steps
     public class OpportunitySteps
     {
         private readonly ICrmTestingContext _crmContext;
-        private readonly SeleniumTestingContext _selenumContext;
+        private readonly ISeleniumTestingContext _selenumContext;
 
         public OpportunitySteps(CrmTestingContext crmContext, SeleniumTestingContext selenumContext)
         {

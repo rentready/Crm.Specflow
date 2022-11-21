@@ -11,7 +11,7 @@ namespace Vermaat.Crm.Specflow.Commands
     {
         private readonly string _alias;
 
-        public ActivateQuoteCommand(ICrmTestingContext crmContext, SeleniumTestingContext selenumContext, string alias) 
+        public ActivateQuoteCommand(ICrmTestingContext crmContext, ISeleniumTestingContext selenumContext, string alias) 
             : base(crmContext, selenumContext)
         {
             _alias = alias;

@@ -5,9 +5,9 @@ namespace Vermaat.Crm.Specflow.Commands
     public abstract class BrowserOnlyCommandFunc<TResult> : ICommandFunc<TResult>
     {
         protected readonly ICrmTestingContext _crmContext;
-        protected readonly SeleniumTestingContext _seleniumContext;
+        protected readonly ISeleniumTestingContext _seleniumContext;
 
-        public BrowserOnlyCommandFunc(ICrmTestingContext crmContext, SeleniumTestingContext seleniumContext)
+        public BrowserOnlyCommandFunc(ICrmTestingContext crmContext, ISeleniumTestingContext seleniumContext)
         {
             _crmContext = crmContext;
             _seleniumContext = seleniumContext;
@@ -27,9 +27,9 @@ namespace Vermaat.Crm.Specflow.Commands
     public abstract class BrowserOnlyCommand : ICommand
     {
         protected readonly ICrmTestingContext _crmContext;
-        protected readonly SeleniumTestingContext _seleniumContext;
+        protected readonly ISeleniumTestingContext _seleniumContext;
 
-        public BrowserOnlyCommand(ICrmTestingContext crmContext, SeleniumTestingContext seleniumContext)
+        public BrowserOnlyCommand(ICrmTestingContext crmContext, ISeleniumTestingContext seleniumContext)
         {
             _crmContext = crmContext;
             _seleniumContext = seleniumContext;

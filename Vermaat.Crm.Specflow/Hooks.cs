@@ -16,7 +16,7 @@ namespace Vermaat.Crm.Specflow
     [Binding]
     public class Hooks
     {
-        private readonly SeleniumTestingContext _seleniumContext;
+        private readonly ISeleniumTestingContext _seleniumContext;
         private readonly ICrmTestingContext _crmContext;
         private readonly FeatureContext _featureContext;
         private readonly ScenarioContext _scenarioContext;

@@ -17,7 +17,7 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly string _alias;
         private readonly string _parentAlias;
 
-        public CreateRelatedRecordCommand(ICrmTestingContext crmContext, SeleniumTestingContext seleniumContext,
+        public CreateRelatedRecordCommand(ICrmTestingContext crmContext, ISeleniumTestingContext seleniumContext,
        string entityLogicalName, Table criteria, string alias, string parentAlias)
        : base(crmContext, seleniumContext)
         {

@@ -15,7 +15,7 @@ namespace Vermaat.Crm.Specflow.Steps
     public class TryUntilSteps
     {
         private readonly ICrmTestingContext _crmContext;
-        private readonly SeleniumTestingContext _seleniumContext;
+        private readonly ISeleniumTestingContext _seleniumContext;
 
         public TryUntilSteps(CrmTestingContext crmContext, SeleniumTestingContext seleniumContext)
         {

@@ -12,7 +12,7 @@ namespace Vermaat.Crm.Specflow.Steps
     public class UserSteps
     {
         private readonly ICrmTestingContext _crmContext;
-        private readonly SeleniumTestingContext _selenumContext;
+        private readonly ISeleniumTestingContext _selenumContext;
         private readonly UserProfileHandler _userProfileHandler;
 
         public UserSteps(CrmTestingContext crmContext, SeleniumTestingContext selenumContext, UserProfileHandler userProfileHandler)

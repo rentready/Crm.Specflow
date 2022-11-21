@@ -9,7 +9,7 @@ namespace Vermaat.Crm.Specflow.Commands
         private readonly EntityReference _toDelete;
         private readonly string _alias;
 
-        public DeleteRecordCommand(ICrmTestingContext crmContext, SeleniumTestingContext seleniumContext, string alias)
+        public DeleteRecordCommand(ICrmTestingContext crmContext, ISeleniumTestingContext seleniumContext, string alias)
             :base(crmContext, seleniumContext)
         {
             _toDelete = crmContext.RecordCache.Get(alias, true);
