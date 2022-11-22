@@ -23,7 +23,7 @@ namespace Vermaat.Crm.Specflow
         }
         public static bool IsLabel(this Label label, int lcid, string name)
         {
-            return name.Equals(label.GetLabelInLanguage(lcid), StringComparison.CurrentCultureIgnoreCase);
+            return label != null ? name.Equals(label.GetLabelInLanguage(lcid), StringComparison.CurrentCultureIgnoreCase) : false;
         }
 
         public static void ExecuteWithRetry(int retryCount, int sleepTime, Action action)
