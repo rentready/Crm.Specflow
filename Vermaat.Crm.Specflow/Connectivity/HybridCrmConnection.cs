@@ -51,7 +51,7 @@ namespace Vermaat.Crm.Specflow.Connectivity
             return new HybridCrmConnection(clientId, clientSecret, username, password, mfaKey);
         }
 
-        public override CrmService CreateCrmServiceInstance()
+        public override ICrmService CreateCrmServiceInstance()
         {
             var service = new CrmService($"AuthType=ClientSecret;Url='{_loginInfo.Url}';ClientId='{_clientId}';ClientSecret='{_clientSecret}';RequireNewInstance=True");
             service.CallerId = GetImpersonatingUser(service);
@@ -63,7 +63,7 @@ namespace Vermaat.Crm.Specflow.Connectivity
             return _loginInfo;
         }
 
-        private Guid GetImpersonatingUser(CrmService service)
+        private Guid GetImpersonatingUser(ICrmService service)
         {
             var queryResult = service.RetrieveMultiple(new QueryExpression(SystemUser.EntityLogicalName)
             {

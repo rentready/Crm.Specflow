@@ -10,17 +10,17 @@ namespace Vermaat.Crm.Specflow.Connectivity
 {
     public abstract class CrmConnection
     {
-        private CrmService _service;
+        private ICrmService _service;
 
         public CrmConnection(string identifier)
         {
             Identifier = $"{GetType().Name}_{identifier}";
         }
 
-        public abstract CrmService CreateCrmServiceInstance();
+        public abstract ICrmService CreateCrmServiceInstance();
         public abstract BrowserLoginDetails GetBrowserLoginInformation();
 
-        public CrmService Service 
+        public ICrmService Service 
         {
             get 
             {

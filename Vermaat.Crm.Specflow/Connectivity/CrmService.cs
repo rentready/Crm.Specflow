@@ -17,7 +17,7 @@ namespace Vermaat.Crm.Specflow.Connectivity
     /// <summary>
     /// Connection to Dynamics CRM
     /// </summary>
-    public class CrmService : IOrganizationService
+    public class CrmService : ICrmService
     {
         private readonly Lazy<ServiceClient> _service;
         private readonly string _connectionString;
@@ -167,7 +167,7 @@ namespace Vermaat.Crm.Specflow.Connectivity
                 throw new TestExecutionException(Constants.ErrorCodes.UNABLE_TO_LOGIN, client.LastException, client.LastError);
 
             return client;
-            
+
         }
     }
 }
