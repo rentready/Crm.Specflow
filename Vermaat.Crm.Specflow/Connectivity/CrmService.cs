@@ -26,7 +26,7 @@ namespace Vermaat.Crm.Specflow.Connectivity
         private Guid _callerId;
 
 
-        private ServiceClient Service => _service.Value;
+        private IOrganizationService Service => _service.Value;
         public UserSettings UserSettings => _userSettings.Value;
         public Guid UserId => _userId.Value;
 
@@ -37,7 +37,7 @@ namespace Vermaat.Crm.Specflow.Connectivity
             set
             {
                 _callerId = value;
-                Service.CallerId = CallerId;
+                _service.Value.CallerId = CallerId;
                 _userSettings = new Lazy<UserSettings>(GetUserSettings);
                 _userId = new Lazy<Guid>(GetUserId);
             }
