@@ -33,7 +33,7 @@ namespace Vermaat.Crm.Specflow
             XmlSerializer ser = new XmlSerializer(typeof(DefaultData));
 
             FileInfo dllPath = new FileInfo(Assembly.GetExecutingAssembly().Location);
-            FileInfo file = new FileInfo(string.Format(@"{0}\{1}", dllPath.DirectoryName, defaultDataFile));
+            FileInfo file = new FileInfo(Path.Combine(dllPath.DirectoryName, defaultDataFile));
 
             using (XmlReader reader = XmlReader.Create(file.FullName))
             {
